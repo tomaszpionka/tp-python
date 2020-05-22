@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     />
 
-    <title>tomaszpionka</title>
+    <title>tp-python</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
@@ -26,7 +26,7 @@
     <div class="jumbotron jumbotron-fluid py-3 px-3">
       <h3>Hello, world!</h3>
       <p class="lead">
-        This is a simple Polish-English dictionary created by Tomasz Pionka.
+        This is a simple translator created by Tomasz Pionka.
       </p>
       <hr class="my-4" />
       <p>
@@ -47,30 +47,8 @@
         <div class="card">
           <div class="card-header bg-dark">
             <div class="row">
-              <div class="col">
-                <div class="input-group mb-3">
-                  <select
-                    class="custom-select"
-                    name="selectFrom"
-                    id="inputGroupSelect01"
-                  >
-                    <option selected>{{selectFrom}}</option>
-                  </select>
-                </div>
-              </div>
               <div class="col" style="text-align: center;">
                 <button type="submit" class="btn btn-primary">Translate</button>
-              </div>
-              <div class="col">
-                <div class="input-group mb-3">
-                  <select
-                    class="custom-select"
-                    name="selectTo"
-                    id="inputGroupSelect02"
-                  >
-                    <option selected>{{selectTo}}</option>
-                  </select>
-                </div>
               </div>
             </div>
           </div>
@@ -103,26 +81,7 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <script type="text/javascript">
-      const arr = document.getElementById("langArray").innerText;
-      arr2 = arr.replace(/\(.+?\)/g, "").replace(/[^a-z0-9+]()/gi, " ");
-      console.log(arr2);
-      let langArray = arr2.split("   ");
-      console.log(langArray);
-      let selectBox = document.getElementById("inputGroupSelect01");
-
-      for (let i = 0, l = langArray.length; i < l; i++) {
-        let option = langArray[i];
-        selectBox.options.add(new Option(option, option));
-      }
-
-      let selectBox2 = document.getElementById("inputGroupSelect02");
-
-      for (let i = 0, l = langArray.length; i < l; i++) {
-        let option = langArray[i];
-        selectBox2.options.add(new Option(option, option));
-      }
-    </script>
+    <!-- <script type="text/javascript"></script> -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

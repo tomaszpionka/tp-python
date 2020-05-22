@@ -124,14 +124,10 @@ def home():
         return render_template("home.html", langArray=langArray, toLang=toLang, selectFrom=selectFrom, selectTo=selectTo)
     if request.method == "POST":
         text = request.form["fromLang"]
-        selectFrom = request.form["selectFrom"]
-        selectTo = request.form["selectTo"]
+        selectFrom = "auto"
+        selectTo = "polish"
         fromLang = ""
         toLang = ""
-        if selectFrom == "From...":
-            selectFrom = "auto"
-        if selectTo == "To...":
-            selectTo = "english"
         if len(text) > 0:
             t = trans.translate(text, src=selectFrom, dest=selectTo)
             d = trans.detect(text)
