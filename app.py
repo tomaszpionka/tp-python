@@ -118,8 +118,8 @@ langArray = list(LANGUAGES.values())
 @app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == "GET":
-        selectFrom = "From..."
-        selectTo = "To..."
+        selectFrom = "from..."
+        selectTo = "polish"
         toLang = "..."
         return render_template("home.html", langArray=langArray, toLang=toLang, selectFrom=selectFrom, selectTo=selectTo)
     if request.method == "POST":
@@ -134,6 +134,9 @@ def home():
             fromLang = t.origin
             toLang = t.text
             selectFrom = LANGUAGES[d.lang]
+        if len(text) == 0:
+            selectFrom = "from..."
+            selectTo = "polish"
         return render_template("home.html", fromLang=fromLang, toLang=toLang, selectFrom=selectFrom, selectTo=selectTo)
 
 
